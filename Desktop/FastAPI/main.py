@@ -24,12 +24,5 @@ def view():
 
     return data
 
-@app.get("/patient/{patient_id}")
-def view_patient(patient_id:str=Path(...,description="enter the patient id ",example="P001")):
-    #load all the patients
-    data = load_data()
-    if patient_id in data:
-        return data[patient_id]
-    raise HTTPException(status_code=200,detail="file not found ")
 
 
